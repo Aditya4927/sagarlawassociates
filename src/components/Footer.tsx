@@ -80,14 +80,14 @@ const Footer = () => {
             <h4 className="text-cream font-semibold mb-6">Contact Info</h4>
             <div className="space-y-4 text-sm">
               <p className="text-cream/60">
-                123 Law Chambers, Civil Lines<br />
-                Near District Court, City - 110001
+                C-114 , TIS HAZARI<br />
+                District Court, City - 110054
               </p>
               <p className="text-cream/60">
-                Phone: +91 98765 43210
+                Phone: +91 9810120435
               </p>
               <p className="text-cream/60">
-                Email: contact@sagarlawassociates.com
+                Email: adv.madansagar@gmail.com
               </p>
             </div>
           </div>
