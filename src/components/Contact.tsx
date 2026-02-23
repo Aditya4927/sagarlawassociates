@@ -32,8 +32,8 @@ const Contact = () => {
                     Office Address
                   </h3>
                   <p className="text-muted-foreground">
-                    123 Law Chambers, Civil Lines<br />
-                    Near District Court, City - 110001
+                    C-114 , TIS HAZARI <br />
+                     District Court, City - 110054
                   </p>
                 </div>
               </div>
@@ -47,8 +47,8 @@ const Contact = () => {
                     Phone Number
                   </h3>
                   <p className="text-muted-foreground">
-                    +91 98765 43210<br />
-                    +91 11 2345 6789
+                    +91 9810120435<br />
+                    +91 8076310016
                   </p>
                 </div>
               </div>
@@ -62,8 +62,8 @@ const Contact = () => {
                     Email Address
                   </h3>
                   <p className="text-muted-foreground">
-                    contact@sagarlawassociates.com<br />
-                    info@sagarlawassociates.com
+                    adv.madansagar@gmail.com<br />
+                
                   </p>
                 </div>
               </div>
@@ -77,7 +77,7 @@ const Contact = () => {
                     Office Hours
                   </h3>
                   <p className="text-muted-foreground">
-                    Monday - Saturday: 10:00 AM - 6:00 PM<br />
+                    Monday - Saturday: 8:00 AM - 7:00 PM<br />
                     Sunday: By Appointment Only
                   </p>
                 </div>
