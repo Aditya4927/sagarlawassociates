@@ -5,6 +5,7 @@ import PracticeAreas from "@/components/PracticeAreas";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import FloatingButtons from "@/components/FloatingButtons";
 
 const Index = () => {
   return (
@@ -16,6 +17,8 @@ const Index = () => {
       <WhyChooseUs />
       <Contact />
       <Footer />
+      {/* Floating WhatsApp + Call buttons - visible on all pages */}
+      <FloatingButtons />
     </div>
   );
 };
