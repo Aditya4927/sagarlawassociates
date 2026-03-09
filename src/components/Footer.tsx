@@ -1,4 +1,4 @@
-import { Scale } from "lucide-react";
+import { Scale, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,6 +24,7 @@ const Footer = () => {
     <footer className="bg-navy pt-16 pb-8">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
           {/* Brand */}
           <div className="lg:col-span-1">
             <a href="#home" className="flex items-center gap-3 mb-6">
@@ -44,6 +45,17 @@ const Footer = () => {
               professionalism, and a commitment to achieving the best outcomes
               for our clients.
             </p>
+
+            {/* WhatsApp CTA */}
+            <a
+              href="https://wa.me/919810120435?text=Hello,%20I%20would%20like%20to%20book%20a%20free%20consultation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white text-sm rounded-lg transition-colors"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Chat on WhatsApp
+            </a>
           </div>
 
           {/* Quick Links */}
@@ -69,7 +81,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {practiceAreas.map((area) => (
                 <li key={area}>
-                  <span className="text-cream/60 text-sm">{area}</span>
+                  <a
+                    href="#practice"
+                    className="text-cream/60 hover:text-gold transition-colors text-sm"
+                  >
+                    {area}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -79,18 +96,57 @@ const Footer = () => {
           <div>
             <h4 className="text-cream font-semibold mb-6">Contact Info</h4>
             <div className="space-y-4 text-sm">
-              <p className="text-cream/60">
-                C-114 , TIS HAZARI<br />
-                District Court, City - 110054
-              </p>
-              <p className="text-cream/60">
-                Phone: +91 9810120435
-              </p>
-              <p className="text-cream/60">
-                Email: adv.madansagar@gmail.com
-              </p>
+
+              <a
+                href="https://maps.google.com/?q=Tis+Hazari+Court+Delhi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 text-cream/60 hover:text-gold transition-colors"
+              >
+                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0 text-gold" />
+                <span>C-114, Tis Hazari District Court,<br />Delhi - 110054</span>
+              </a>
+
+              <a
+                href="tel:+919810120435"
+                className="flex items-center gap-3 text-cream/60 hover:text-gold transition-colors"
+              >
+                <Phone className="h-4 w-4 flex-shrink-0 text-gold" />
+                +91 9810120435
+              </a>
+
+              <a
+                href="tel:+918076310016"
+                className="flex items-center gap-3 text-cream/60 hover:text-gold transition-colors"
+              >
+                <Phone className="h-4 w-4 flex-shrink-0 text-gold" />
+                +91 8076310016
+              </a>
+
+              <a
+                href="mailto:adv.madansagar@gmail.com"
+                className="flex items-center gap-3 text-cream/60 hover:text-gold transition-colors"
+              >
+                <Mail className="h-4 w-4 flex-shrink-0 text-gold" />
+                adv.madansagar@gmail.com
+              </a>
+
             </div>
           </div>
+        </div>
+
+        {/* Google Maps Embed */}
+        <div className="mb-12 rounded-2xl overflow-hidden border border-cream/10">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.8!2d77.2!3d28.67!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd0!2sTis+Hazari+Court%2C+Delhi!5e0!3m2!1sen!2sin!4v1"
+            width="100%"
+            height="200"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Sagar Law Associates Office Location"
+          />
         </div>
 
         {/* Bottom Bar */}
