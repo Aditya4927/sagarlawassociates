@@ -2,6 +2,14 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Award, Users } from "lucide-react";
 
 const Hero = () => {
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToPractice = () => {
+    document.getElementById("practice")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section
       id="home"
@@ -31,29 +39,53 @@ const Hero = () => {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-cream leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            <h1
+              className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-cream leading-tight mb-6 animate-fade-up"
+              style={{ animationDelay: "0.1s" }}
+            >
               Justice Served with{" "}
               <span className="text-gradient-gold">Integrity</span> and{" "}
               <span className="text-gradient-gold">Excellence</span>
             </h1>
 
-            <p className="text-lg text-cream/70 mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <p
+              className="text-lg text-cream/70 mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-up"
+              style={{ animationDelay: "0.2s" }}
+            >
               At Sagar Law Associates, we combine decades of legal expertise with
               a client-first approach. Your victory is our mission.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              <Button variant="gold" size="xl" className="group">
+            <div
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up"
+              style={{ animationDelay: "0.3s" }}
+            >
+              {/* ✅ FIXED - Scrolls to contact section */}
+              <Button
+                variant="gold"
+                size="xl"
+                className="group"
+                onClick={scrollToContact}
+              >
                 Schedule Consultation
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="goldOutline" size="xl">
+
+              {/* ✅ FIXED - Scrolls to practice areas section */}
+              <Button
+                variant="goldOutline"
+                size="xl"
+                onClick={scrollToPractice}
+              >
                 Our Practice Areas
               </Button>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-cream/10 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+            <div
+              className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-cream/10 animate-fade-up"
+              style={{ animationDelay: "0.4s" }}
+            >
               <div className="text-center lg:text-left">
                 <div className="text-3xl lg:text-4xl font-serif font-bold text-gold mb-1">
                   500+
@@ -94,7 +126,10 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="bg-cream/5 backdrop-blur-sm border border-cream/10 rounded-2xl p-8 animate-scale-in" style={{ animationDelay: "0.2s" }}>
+            <div
+              className="bg-cream/5 backdrop-blur-sm border border-cream/10 rounded-2xl p-8 animate-scale-in"
+              style={{ animationDelay: "0.2s" }}
+            >
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-gold/20 rounded-xl">
                   <Users className="h-8 w-8 text-gold" />
@@ -111,7 +146,10 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="bg-cream/5 backdrop-blur-sm border border-cream/10 rounded-2xl p-8 animate-scale-in" style={{ animationDelay: "0.4s" }}>
+            <div
+              className="bg-cream/5 backdrop-blur-sm border border-cream/10 rounded-2xl p-8 animate-scale-in"
+              style={{ animationDelay: "0.4s" }}
+            >
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-gold/20 rounded-xl">
                   <Shield className="h-8 w-8 text-gold" />
@@ -125,7 +163,7 @@ const Hero = () => {
                     details remain strictly confidential.
                   </p>
                 </div>
-              </div>
+                </div>
             </div>
           </div>
         </div>
