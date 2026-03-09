@@ -13,6 +13,8 @@ Allow: /
 User-agent: *
 Allow: /
 User-agent: *
+Disallow:
+User-agent: *
 Allow: /
 
 Sitemap: https://sagarlawassociates.com/sitemap.xml
