@@ -1,4 +1,6 @@
 import { Award, Clock, MessageSquare, Target } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const reasons = [
   {
@@ -27,11 +29,39 @@ const reasons = [
   },
 ];
 
+const testimonials = [
+  {
+    initials: "RK",
+    name: "Rajesh Kumar",
+    role: "Business Owner",
+    text: "Sagar Law Associates handled my property dispute with exceptional professionalism. Their strategic approach and dedication resulted in a favorable outcome that exceeded my expectations.",
+  },
+  {
+    initials: "PS",
+    name: "Priya Sharma",
+    role: "Homeowner",
+    text: "I was facing a complex family law matter and felt completely lost. Advocate Madan Sagar guided me through every step with patience and expertise. Highly recommended!",
+  },
+  {
+    initials: "AV",
+    name: "Amit Verma",
+    role: "Company Director",
+    text: "Outstanding corporate law support. They handled our company's legal compliance and contracts flawlessly. Professional, responsive, and thorough in every aspect.",
+  },
+];
+
 const WhyChooseUs = () => {
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
+
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section id="why-us" className="py-20 lg:py-32 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
+
           {/* Content */}
           <div>
             <div className="inline-block px-4 py-1.5 bg-gold/10 rounded-full mb-4">
@@ -49,7 +79,7 @@ const WhyChooseUs = () => {
               empathy to deliver exceptional results for our clients.
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-6 mb-10">
               {reasons.map((reason, index) => (
                 <div key={index} className="flex items-start gap-4">
                   <div className="p-2 bg-navy/5 rounded-lg flex-shrink-0">
@@ -66,9 +96,14 @@ const WhyChooseUs = () => {
                 </div>
               ))}
             </div>
+
+            {/* CTA Button */}
+            <Button variant="gold" size="lg" onClick={scrollToContact}>
+              Get Free Consultation Today
+            </Button>
           </div>
 
-          {/* Testimonial Card */}
+          {/* Testimonials */}
           <div className="bg-navy rounded-2xl p-8 lg:p-12 relative overflow-hidden">
             {/* Decorative */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full blur-3xl" />
@@ -76,32 +111,49 @@ const WhyChooseUs = () => {
 
             <div className="relative">
               <div className="text-5xl text-gold/30 font-serif mb-4">"</div>
-              <blockquote className="text-cream text-lg lg:text-xl leading-relaxed mb-8">
-                Sagar Law Associates handled my property dispute with exceptional
-                professionalism. Their strategic approach and dedication resulted
-                in a favorable outcome that exceeded my expectations. I cannot
-                recommend them highly enough.
+
+              {/* Active Testimonial */}
+              <blockquote className="text-cream text-lg lg:text-xl leading-relaxed mb-8 min-h-[120px] transition-all duration-300">
+                {testimonials[activeTestimonial].text}
               </blockquote>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center">
-                  <span className="text-gold font-semibold">RK</span>
+
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-gold font-semibold">
+                    {testimonials[activeTestimonial].initials}
+                  </span>
                 </div>
                 <div>
-                  <div className="text-cream font-semibold">Rajesh Kumar</div>
-                  <div className="text-cream/60 text-sm">Business Owner</div>
+                  <div className="text-cream font-semibold">
+                    {testimonials[activeTestimonial].name}
+                  </div>
+                  <div className="text-cream/60 text-sm">
+                    {testimonials[activeTestimonial].role}
+                  </div>
                 </div>
               </div>
 
               {/* Star Rating */}
-              <div className="flex gap-1 mt-6">
+              <div className="flex gap-1 mb-8">
                 {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    className="w-5 h-5 text-gold fill-current"
-                    viewBox="0 0 20 20"
-                  >
+                  <svg key={i} className="w-5 h-5 text-gold fill-current" viewBox="0 0 20 20">
                     <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                   </svg>
+                ))}
+              </div>
+
+              {/* Testimonial Selector Dots */}
+              <div className="flex gap-3">
+                {testimonials.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveTestimonial(i)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      activeTestimonial === i
+                        ? "bg-gold w-8"
+                        : "bg-cream/30 hover:bg-cream/50"
+                    }`}
+                  />
                 ))}
               </div>
             </div>
